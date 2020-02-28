@@ -7,6 +7,8 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.whatshouldiread.customclasses.Book
+import com.example.whatshouldiread.customclasses.Question
 
 class MainActivity : AppCompatActivity() {
 
