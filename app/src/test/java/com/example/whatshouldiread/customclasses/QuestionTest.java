@@ -8,12 +8,22 @@ import static org.junit.Assert.*;
 
 public class QuestionTest {
 
+    private Question testQuestion = null;
+    private String testQuestionText = null;
+    private int testQuestionPosition = -1;
+
     @Before
-    public void setUp() throws Exception {
+    public void setUp() throws Exception
+    {
+
     }
 
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() throws Exception
+    {
+        testQuestion = null;
+        testQuestionText = null;
+        testQuestionPosition = -1;
     }
 
     @Test
@@ -23,10 +33,12 @@ public class QuestionTest {
     }
 
     @Test
-    public void questionCons()
+    public void testDefaultQuestionConstructor()
     {
-        Question question1 = new Question();
-        assertNotNull(question1);
+        givenDefaultQuestionConstructorIsCalled();
+        whenGetQuestionPositionIsCalled();
+        whenGetQuestionTextIsCalled();
+        thenTestValuesEquals("TestQuestionText", 1);
     }
 
     @Test
@@ -41,5 +53,25 @@ public class QuestionTest {
         assertNotNull(questionTextGetter);
     }
 
+    private void givenDefaultQuestionConstructorIsCalled()
+    {
+        testQuestion = new Question();
+    }
+
+    private void whenGetQuestionTextIsCalled()
+    {
+        testQuestionText = testQuestion.getQuestionText();
+    }
+
+    private void whenGetQuestionPositionIsCalled()
+    {
+        testQuestionPosition = testQuestion.getQuestionPosition();
+    }
+
+    private void thenTestValuesEquals(String questionText, int questionPosition)
+    {
+        assertEquals(questionText, testQuestionText);
+        assertEquals(questionPosition, testQuestionPosition);
+    }
 
 }
