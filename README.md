@@ -5,4 +5,4 @@ Application that allows users to find a book to read based on a quiz of various 
 1. Provide users information of the book from the quiz result (Book Name, Author, Amazon Link)
 1. Allow users to create a profile to store their quiz results and view past results.
 
-Please email us before creating a branch and pull request. Use the [UC Student Directory] (https://ucdirectory.uc.edu/StudentDirectory.asp) to find the emails.
+Please email us before creating a branch and pull request. Use the [UC Student Directory](https://ucdirectory.uc.edu/StudentDirectory.asp) to find the emails.
