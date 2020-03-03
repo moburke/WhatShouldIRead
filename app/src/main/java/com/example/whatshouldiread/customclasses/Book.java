@@ -1,7 +1,8 @@
 package com.example.whatshouldiread.customclasses;
 
 /*
- * Javadoc Template for class
+ * Class that stores information for a particular book. Allows for links to amazon for the particular
+ * book be created through a function, rather than hardcoding.
  */
 
 public class Book {
@@ -9,9 +10,11 @@ public class Book {
     private String bookName;
     private String bookAuthor;
     private Question[] bookQuestions;
+    private int[] bookAnswers;
 
     /*
-    * Javadoc template
+    * Default constructor for Book class. Sets test values for the book name, book author, and
+    * questions to get to this book.
      */
 
     public Book()
@@ -19,27 +22,30 @@ public class Book {
         this.bookName = "TestBook";
         this.bookAuthor = "TestAuthor";
         this.bookQuestions = new Question[]{new Question()};
+        this.bookAnswers = new int[] {1};
     }
 
     /*
-     * Javadoc template
+     * Constructor for Book class that takes in parameters for each parameter of the Book Class.
      *
-     * @param bookName
-     * @param bookAuthor
-     * @param bookQuestion
+     * @param bookName String value of book name
+     * @param bookAuthor String value of the book's author
+     * @param bookQuestion Array of questions that were used to get to this book
+     * @param bookAnswers int array of answer values to get to this book.
      */
 
-    public Book(String bookName, String bookAuthor, Question[] bookQuestions)
+    public Book(String bookName, String bookAuthor, Question[] bookQuestions, int[] bookAnswers)
     {
         this.bookName = bookName;
         this.bookAuthor = bookAuthor;
         this.bookQuestions = bookQuestions;
+        this.bookAnswers = bookAnswers;
     }
 
     /*
-     * Javadoc template
+     * Gets a string value of the books name.
      *
-     * @return bookName
+     * @return bookName string value of bookName for class.
      */
     public String getBookName()
     {
@@ -47,9 +53,9 @@ public class Book {
     }
 
     /*
-     * Javadoc template
+     * Sets a string value of the books name.
      *
-     * @param bookName
+     * @param bookName string value of bookName.
      */
 
     public void setBookName(String bookName)
@@ -58,9 +64,9 @@ public class Book {
     }
 
     /*
-     * Javadoc template
+     * Gets string value for book author.
      *
-     * @return bookAuthor
+     * @return bookAuthor string value of book author
      */
 
     public String getBookAuthor()
@@ -69,9 +75,9 @@ public class Book {
     }
 
     /*
-     * Javadoc template
+     * Sets string value for book author
      *
-     * @param bookAuthor
+     * @param bookAuthor string value of book author
      */
 
     public void setBookAuthor(String bookAuthor)
@@ -80,9 +86,9 @@ public class Book {
     }
 
     /*
-     * Javadoc template
+     * Gets array of questions for this book.
      *
-     * @return bookQuestion
+     * @return bookQuestion array of questions for this class.
      */
 
     public Question[] getBookQuestions()
@@ -91,9 +97,9 @@ public class Book {
     }
 
     /*
-     * Javadoc template
+     * Sets questions to get to this book.
      *
-     * @param bookQuestion
+     * @param bookQuestion Question array to set
      */
 
     public void setBookQuestions(Question[] bookQuestions)
@@ -102,27 +108,30 @@ public class Book {
     }
 
     /*
-     * Javadoc template
+     * Gets a png file from app/data (custom directory) based on the answers needed to get to the book.
+     * As there are no duplicate books for a set of answers, this allows us to get the unique book
+     * image for each book.
      *
-     * @return bookImagePath
+     * @return bookImagePath string of the relative path of the png file.
      */
 
     public String getBookImagePath()
     {
         String bookImagePath = "/app/data/";
 
-        for (Question question : bookQuestions)
+        for (int answer : bookAnswers)
         {
-            bookImagePath.concat(String.valueOf(question.getQuestionPosition()));
+            bookImagePath.concat(String.valueOf(answer));
         }
 
         return bookImagePath.concat(".png");
     }
 
     /*
-     * Javadoc template
+     * Gets a string value of an amazon link for the book. Replaces any spaces within the book name
+     * to create the amazon link while preserving other special characters.
      *
-     * @return Amazon Link
+     * @return String value of amazon link for this class.
      */
 
     public String getAmazonStoreLink()
