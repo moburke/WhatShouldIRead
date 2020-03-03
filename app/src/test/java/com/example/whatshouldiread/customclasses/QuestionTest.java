@@ -74,4 +74,28 @@ public class QuestionTest {
         assertEquals(questionPosition, testQuestionPosition);
     }
 
+    @Test
+    public void questionSetters()
+    {
+        givenDefaultQuestionConstructorIsCalled();
+        whenQuestionTextSetterIsCalled();
+        whenQuestionPositionSetterIsCalled();
+        thenQuestionGettersEqual();
+    }
+
+    private void whenQuestionTextSetterIsCalled()
+    {
+        testQuestion.setQuestionText("ABCD");
+    }
+
+    private void whenQuestionPositionSetterIsCalled()
+    {
+        testQuestion.setQuestionPosition(4);
+    }
+
+    private void thenQuestionGettersEqual()
+    {
+        assertEquals("ABCD", testQuestion.getQuestionText());
+        assertEquals(4, testQuestion.getQuestionPosition());
+    }
 }
