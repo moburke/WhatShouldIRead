@@ -1,7 +1,8 @@
 package com.example.whatshouldiread.customclasses;
 
 /*
- * Javadoc Template for class
+ * Class to store a question in text form as well as what position the question will be. Allows for
+ * multiple questions for the same position without changing the end result of the books.
  */
 
 public class Question {
@@ -10,7 +11,7 @@ public class Question {
     private int questionPosition;
 
     /*
-     * Javadoc Template
+     * Default constructor for Question. Sets default text and position of 1.
      */
 
     public Question()
@@ -20,10 +21,10 @@ public class Question {
     }
 
     /*
-     * Javadoc Template
+     * Constructor that takes a String parameter and a int to create a question.
      *
-     * @param questionText
-     * @param questionPosition
+     * @param questionText Text for question
+     * @param questionPosition Position for this question
      */
 
     public Question(String questionText, int questionPosition)
@@ -33,9 +34,9 @@ public class Question {
     }
 
     /*
-     * Javadoc Template
+     * Returns the text for the question in a string.
      *
-     * @return questionText
+     * @return questionText Value of questionText
      */
 
     public String getQuestionText()
@@ -44,9 +45,9 @@ public class Question {
     }
 
     /*
-     * Javadoc Template
+     * Sets the value of the question text to a given string.
      *
-     * @param questionText
+     * @param questionText string to set question text to.
      */
 
     public void setQuestionText(String questionText)
@@ -55,9 +56,9 @@ public class Question {
     }
 
     /*
-     * Javadoc Template
+     * Gets the position of this question.
      *
-     * @return questionPosition
+     * @return questionPosition int value of this question location.
      */
 
     public int getQuestionPosition() {
@@ -65,9 +66,9 @@ public class Question {
     }
 
     /*
-     * Javadoc Template
+     * Sets the position of this question to int parameter.
      *
-     * @param questionPosition
+     * @param questionPosition int value to set questionPosition to
      */
 
     public void setQuestionPosition(int questionPosition)
