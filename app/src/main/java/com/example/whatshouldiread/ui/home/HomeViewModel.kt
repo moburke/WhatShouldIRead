@@ -11,3 +11,5 @@ class HomeViewModel : ViewModel() {
     }
     val text: LiveData<String> = _text
 }
+
+//Here, a method could be added from the viewModel

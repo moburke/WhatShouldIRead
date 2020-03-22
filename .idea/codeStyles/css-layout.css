@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="GreenText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">#00FF00</item>
+    </style>
+</resources>
+
+/*
+//Are classes designed appropriately?  Are there any super large classes or methods that should be broken into several other classes or methods?  Specifically, which ones?
+  Are the UI and other layers appropriately separate?  Do you see Toasts from non-UI layers?  Do you see business logic or data access in the UI layers?
+  Are Exceptions properly handled, or are there empty catches and exceptions that get buried?
+
+
+  */
+
