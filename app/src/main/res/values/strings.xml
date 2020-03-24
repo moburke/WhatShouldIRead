@@ -3,4 +3,6 @@
     <string name="title_home">Home</string>
     <string name="title_bookshelf">Bookshelf</string>
     <string name="title_profile">Profile</string>
+    <string name="welcome_text">Welcome to What Should I Read?</string>
+    <string name="quiz_button_text">Take the Quiz!</string>
 </resources>
