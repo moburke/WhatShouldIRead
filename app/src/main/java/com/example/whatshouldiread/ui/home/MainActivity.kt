@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         btn_start_quiz.setOnClickListener{
-            val intent = Intent(this, QuizActivity::class.java)
+            val intent = Intent(this, QuizFragment::class.java)
             startActivity(intent)
         }
     }
