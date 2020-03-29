@@ -5,4 +5,5 @@
     <string name="title_profile">Profile</string>
     <string name="welcome_text">Welcome to What Should I Read?</string>
     <string name="quiz_button_text">Take the Quiz!</string>
+    <string name="next">Next</string>
 </resources>
