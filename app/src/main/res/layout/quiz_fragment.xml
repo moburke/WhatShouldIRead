@@ -8,7 +8,7 @@
     tools:context=".ui.home.QuizFragment" >
 
     <TextView
-        android:id="@+id/quifQuestionTextView"
+        android:id="@+id/quizQuestionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -17,14 +17,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnNext"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quifQuestionTextView">
+        app:layout_constraintTop_toBottomOf="@+id/quizQuestionTextView">
 
         <RadioButton
             android:id="@+id/answerOption1"
@@ -38,12 +37,14 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/btnNext"
+        android:id="@+id/nextButton"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="288dp"
         android:text="@string/next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="427dp" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
