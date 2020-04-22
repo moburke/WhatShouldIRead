@@ -124,7 +124,7 @@ public class Book {
             bookImagePath.concat(String.valueOf(answer));
         }
 
-        return bookImagePath.concat(".png");
+        return bookImagePath.concat("bookImage.jpg");
     }
 
     /*
