@@ -43,13 +43,13 @@ public class QuestionTest {
 
     @Test
     public void questionObjects(){
-        Question testQuestion  = new Question("TestQuestionText", 1);
+        Question testQuestion  = new Question("TestQuestionText", 1, "A", "B");
         assertNotNull(testQuestion);
     }
 
     @Test
     public void questionTextGetter(){
-        Question questionTextGetter = new Question("TestQuestionText",1);
+        Question questionTextGetter = new Question("TestQuestionText", 1, "A", "B");
         assertNotNull(questionTextGetter);
     }
 

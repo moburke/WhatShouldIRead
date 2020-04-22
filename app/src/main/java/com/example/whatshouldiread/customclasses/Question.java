@@ -9,6 +9,8 @@ public class Question {
 
     private String questionText;
     private int questionPosition;
+    private String questionAnswer1;
+    private String questionAnswer2;
 
     /*
      * Default constructor for Question. Sets default text and position of 1.
@@ -18,6 +20,8 @@ public class Question {
     {
         this.questionText = "TestQuestionText";
         this.questionPosition = 1;
+        this.questionAnswer1 = "A";
+        this.questionAnswer2 = "B";
     }
 
     /*
@@ -25,12 +29,16 @@ public class Question {
      *
      * @param questionText Text for question
      * @param questionPosition Position for this question
+     * @param questionAnswer1 Text for Answer1
+     * @param questionAnswer2 Text for Answer2
      */
 
-    public Question(String questionText, int questionPosition)
+    public Question(String questionText, int questionPosition, String questionAnswer1, String questionAnswer2)
     {
         this.questionText = questionText;
         this.questionPosition = questionPosition;
+        this.questionAnswer1 = questionAnswer1;
+        this.questionAnswer2 = questionAnswer2;
     }
 
     /*
@@ -74,5 +82,25 @@ public class Question {
     public void setQuestionPosition(int questionPosition)
     {
         this.questionPosition = questionPosition;
+    }
+
+    public String getQuestionAnswer1()
+    {
+        return questionAnswer1;
+    }
+
+    public void setQuestionAnswer1(String questionAnswer1)
+    {
+        this.questionAnswer1 = questionAnswer1;
+    }
+
+    public String getQuestionAnswer2()
+    {
+        return questionAnswer2;
+    }
+
+    public void setQuestionAnswer2(String questionAnswer2)
+    {
+        this.questionAnswer2 = questionAnswer2;
     }
 }
