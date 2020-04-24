@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.whatshouldiread.R
@@ -25,28 +27,34 @@ class QuizFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View?
     {
+        var view = inflater.inflate(R.layout.quiz_fragment, container, false)
         var initialQuestion = quiz.questions.get(0)
-        txtQuestionText.text = initialQuestion.questionText
-        btnAnswerA.text = initialQuestion.questionAnswer1
-        btnAnswerB.text = initialQuestion.questionAnswer2
 
-        btnAnswerA.setOnClickListener {
+        var txtView = view.findViewById<TextView>(R.id.txtQuestionText)
+        var btnA = view.findViewById<Button>(R.id.btnAnswerA)
+        var btnB = view.findViewById<Button>(R.id.btnAnswerB)
+
+        txtView.text = initialQuestion.questionText
+        btnA.text = initialQuestion.questionAnswer1
+        btnB.text = initialQuestion.questionAnswer2
+
+        btnB.setOnClickListener {
             quiz.answers.set(position, 0)
             position++
             var question = quiz.questions.get(position)
-            txtQuestionText.text = question.questionText
-            btnAnswerA.text = question.questionAnswer1
+            txtView.text = question.questionText
+            btnA.text = question.questionAnswer1
             btnAnswerB.text = question.questionAnswer2
         }
-        btnAnswerB.setOnClickListener {
+        btnB.setOnClickListener {
             quiz.answers.set(position, 1)
             position++
             var question = quiz.questions.get(position)
-            txtQuestionText.text = question.questionText
-            btnAnswerA.text = question.questionAnswer1
-            btnAnswerB.text = question.questionAnswer2
+            txtView.text = question.questionText
+            btnA.text = question.questionAnswer1
+            btnB.text = question.questionAnswer2
         }
-        return inflater.inflate(R.layout.quiz_fragment, container, false)
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
