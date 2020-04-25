@@ -27,34 +27,7 @@ class QuizFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View?
     {
-        var view = inflater.inflate(R.layout.quiz_fragment, container, false)
-        var initialQuestion = quiz.questions.get(0)
-
-        var txtView = view.findViewById<TextView>(R.id.txtQuestionText)
-        var btnA = view.findViewById<Button>(R.id.btnAnswerA)
-        var btnB = view.findViewById<Button>(R.id.btnAnswerB)
-
-        txtView.text = initialQuestion.questionText
-        btnA.text = initialQuestion.questionAnswer1
-        btnB.text = initialQuestion.questionAnswer2
-
-        btnB.setOnClickListener {
-            quiz.answers.set(position, 0)
-            position++
-            var question = quiz.questions.get(position)
-            txtView.text = question.questionText
-            btnA.text = question.questionAnswer1
-            btnAnswerB.text = question.questionAnswer2
-        }
-        btnB.setOnClickListener {
-            quiz.answers.set(position, 1)
-            position++
-            var question = quiz.questions.get(position)
-            txtView.text = question.questionText
-            btnA.text = question.questionAnswer1
-            btnB.text = question.questionAnswer2
-        }
-        return view
+        return inflater.inflate(R.layout.quiz_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

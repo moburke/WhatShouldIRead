@@ -1,7 +1,11 @@
 package com.example.whatshouldiread.customclasses;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -14,35 +18,20 @@ public class Quiz
 
     public Quiz()
     {
-        questions = generateQuizQuestions();
+        questions = new ArrayList<>();
         answers = new Integer[5];
     }
 
-    private List<Question> generateQuizQuestions()
-    {
-        List<Question> returnQuestions = new ArrayList<>();
-        Random rand = new Random();
-        for (Integer position = 0; position < 5; position++)
+    public void addQuestion(InputStream is, int position) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        List<String> textStrings = new ArrayList<>();
+        String line = null;
+        while((line = br.readLine()) != null)
         {
-            Integer questionIntVariation = 0;
-            String questionVariation = questionIntVariation.toString();
-            File file = new File("./data/questions/" + position.toString() + "/" + questionVariation + ".txt");
-            Scanner sc = null;
-            try
-            {
-                sc = new Scanner(file);
-                List<String> textStrings = new ArrayList<>();
-                while (sc.hasNextLine())
-                {
-                    textStrings.add(sc.nextLine());
-                }
-                returnQuestions.add(new Question(textStrings.get(0), position, textStrings.get(1), textStrings.get(2)));
-            } catch (FileNotFoundException e)
-            {
-                e.printStackTrace();
-            }
+            textStrings.add(line);
         }
-        return returnQuestions;
+        br.close();
+        questions.add(new Question(textStrings.get(0), position, textStrings.get(1), textStrings.get(2)));
     }
 
     public List<Question> getQuestions()
