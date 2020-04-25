@@ -1,3 +1,0 @@
-Would you prefer to read a book with a larger number of pages or a smaller number?
-Larger
-Shorter

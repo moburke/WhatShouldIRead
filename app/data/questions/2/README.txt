@@ -1,1 +1,0 @@
-This question position folder is for Long vs Short questions.

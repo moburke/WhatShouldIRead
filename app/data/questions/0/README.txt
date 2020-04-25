@@ -1,1 +1,0 @@
-This question position folder is for Modern vs Classic/Old questions.
