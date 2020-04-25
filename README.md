@@ -6,3 +6,5 @@ Application that allows users to find a book to read based on a quiz of various 
 1. Allow users to create a profile to store their quiz results and view past results.
 
 Please email us before creating a branch and pull request. Use the [UC Student Directory](https://ucdirectory.uc.edu/StudentDirectory.asp) to find the emails.
+
+The Book List with Array values can be found [here](https://docs.google.com/spreadsheets/d/1AOWn5OUgOy6lqQFb_0Ihhr5K_R-xWdcctc0o8aNznms/edit?usp=sharing).
