@@ -5,12 +5,18 @@ package com.example.whatshouldiread.customclasses;
  * book be created through a function, rather than hardcoding.
  */
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Book {
 
     private String bookName;
     private String bookAuthor;
     private Question[] bookQuestions;
-    private int[] bookAnswers;
+    private Integer[] bookAnswers;
 
     /*
     * Default constructor for Book class. Sets test values for the book name, book author, and
@@ -22,7 +28,7 @@ public class Book {
         this.bookName = "TestBook";
         this.bookAuthor = "TestAuthor";
         this.bookQuestions = new Question[]{new Question()};
-        this.bookAnswers = new int[] {1};
+        this.bookAnswers = new Integer[] {1};
     }
 
     /*
@@ -34,12 +40,35 @@ public class Book {
      * @param bookAnswers int array of answer values to get to this book.
      */
 
-    public Book(String bookName, String bookAuthor, Question[] bookQuestions, int[] bookAnswers)
+    public Book(String bookName, String bookAuthor, Question[] bookQuestions, Integer[] bookAnswers)
     {
         this.bookName = bookName;
         this.bookAuthor = bookAuthor;
         this.bookQuestions = bookQuestions;
         this.bookAnswers = bookAnswers;
+    }
+
+    public Book(Integer[] bookAnswers)
+    {
+        this.bookAnswers = bookAnswers;
+        String bookString = bookAnswers.toString();
+        File file = new File("./data/books/" + bookString + "/book.txt");
+        Scanner sc = null;
+        try
+        {
+            sc = new Scanner(file);
+            List<String> textStrings = new ArrayList<>();
+            while (sc.hasNextLine())
+            {
+                textStrings.add(sc.nextLine());
+            }
+            this.bookName = textStrings.get(0);
+            this.bookAuthor = textStrings.get(1);
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     /*
@@ -114,6 +143,17 @@ public class Book {
      *
      * @return bookImagePath string of the relative path of the png file.
      */
+
+    public Integer[] getBookAnswers()
+    {
+        return bookAnswers;
+    }
+
+    public void setBookAnswers(Integer[] bookAnswers)
+    {
+        this.bookAnswers = bookAnswers;
+
+    }
 
     public String getBookImagePath()
     {

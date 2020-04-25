@@ -10,6 +10,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.whatshouldiread.R
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,17 +32,9 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        //btn_start_quiz.setOnClickListener{
-          //  val intent = Intent(this, QuizFragment::class.java)
-            //startActivity(intent)
-        //}
-
-        val btnStartQuizActivity: Button = findViewById(R.id.btn_start_quiz)
-        btnStartQuizActivity.setOnClickListener {
-            val intent = Intent(this, QuizVersion2Activity:: class.java)
+        btn_start_quiz.setOnClickListener{
+            val intent = Intent(this, QuizActivity::class.java)
             startActivity(intent)
-
         }
     }
 }
-

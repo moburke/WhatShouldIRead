@@ -28,7 +28,7 @@ public class BookTest {
     public void bookObjects(){
         Question[] bookQuestions = new Question[]{new Question()};
 
-        Book bookInfo  = new Book("TestBook","TestAuthor", bookQuestions, new int[] {1});
+        Book bookInfo  = new Book("TestBook","TestAuthor", bookQuestions, new Integer[] {1});
         assertNotNull(bookInfo);
     }
 
